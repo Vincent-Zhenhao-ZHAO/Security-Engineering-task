@@ -2,13 +2,14 @@
 
 Welcome to our project! This documentation provides an overview of the problems addressed in the project and instructions on how to execute related codes.
 
-## Table of Contents
+## 📚 Table of Contents
 - [Problem Descriptions](#problem-descriptions)
   - [Threat Modelling](#threat-modelling)
   - [Certificate Authority and PKI (RC)](#certificate-authority-and-pki-rc)
   - [File Integrity (RC)](#file-integrity-rc)
-  - [Execution Instructions](#execution-instructions)
-
+  - [MITM](#execution-instructions)
+- [Execution Instructions](#execution-instructions)
+- 
 ## Problem Descriptions
 
 ### Threat Modelling
@@ -33,7 +34,7 @@ Detailed in two parts:
 - `Signed_Files/q3.py`: Contains script related to File Integrity - Question 1.
 - `File_integrity_report.pdf`: Contains answers for File Integrity - Question 2.
 
-## MITM Execution Instructions
+## Execution Instructions
 
 ### Running TLS Connection and MITM Scripts
 
