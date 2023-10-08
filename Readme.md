@@ -9,6 +9,7 @@ Welcome to our project! This documentation provides an overview of the problems 
   - [File Integrity (RC)](#file-integrity-rc)
   - [MITM](#execution-instructions)
 - [Execution Instructions](#execution-instructions)
+- [Example Video MITM](#example-video-mitm)
 ## Problem Descriptions
 
 ### Threat Modelling
@@ -69,8 +70,6 @@ You should see:
 5. In the machine M, run mitm.py: python3 /path/to/mitm.py [victim_ip] [server_ip] [interface]
 You should able to see the successful message as shown in the evidence. If you want to quit, press "Ctrl + C" in the machine M, you should see the message: "KeyboardInterrupt" And the data file will be saved in the same folder as mitm.py, called "arper.pcap". You can open it in wireshark.
 
-![Exmaple-Video](recorded_video.gif)
-
 ### Running Signed_Files/q3.py
 1. Ensure q3.py, message.txt, messageTwo.txt, public.key, signature.pem in the same folder:
 2. Run q3.py:
@@ -79,4 +78,7 @@ You should able to see the successful message as shown in the evidence. If you w
 python3 q3.py
 ```
 You should see the result message.
+
+### Example Video MITM
+![Exmaple-Video](recorded_video.gif)
    
