@@ -69,7 +69,7 @@ You should see:
 5. In the machine M, run mitm.py: python3 /path/to/mitm.py [victim_ip] [server_ip] [interface]
 You should able to see the successful message as shown in the evidence. If you want to quit, press "Ctrl + C" in the machine M, you should see the message: "KeyboardInterrupt" And the data file will be saved in the same folder as mitm.py, called "arper.pcap". You can open it in wireshark.
 
-[!Exmaple Video](recorded_video.gif)
+![Exmaple-Video](recorded_video.gif)
 
 ### Running Signed_Files/q3.py
 1. Ensure q3.py, message.txt, messageTwo.txt, public.key, signature.pem in the same folder:
