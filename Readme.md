@@ -1,54 +1,80 @@
-# File descriptation:
-#############################################################################################################
-# Problem 1: Threat Modelling -> three questions has been answered in three files:
-# 1.1: Threat Modelling - Question 1  -> Assumptions.pdf
-# 1.2: Threat Modelling - Question 2  -> Attack_tree.pdf
-# 1.3: Threat Modelling - Question 3  -> Risk_assessment.pdf
+# Project Documentation
 
-#############################################################################################################
-# Problem 2: Certificate Authority and PKI (RC) -> two questions has been answered in two files:
-# 2.1: Certificate Authority and PKI - PKI Infrastructure -> rootCA folder
-# - CA's public-key Certificate: ca.crt
-# - Server's public-key Certificate: server.crt
-# 2.2: Man in the middle -> client.py, server.py, mitm.py, evidence
-# - client.py, serer.py -> build TLS connection
-# - mitm.py -> Man in the middle attack
-# - evidence -> This is in folder: Evidence_for_mitm
-# # - picture about processing the mitm attack,
-# # - picture about finally check the ip address,
-# # - picture about saved the data in the file: arper.pcap -> open in wireshark
-# # - picture about arper.pcap in wireshark
-# # - video about the whole process
+Welcome to our project! This documentation provides an overview of the problems addressed in the project and instructions on how to execute related codes.
 
-#############################################################################################################
-# Problem 3: File Integrity (RC):
-# 3.1: File Integrity - Question 1 -> Signed_Files/q3.py
-# 3.2: File Integrity - Question 2 -> File_integrity_report.pdf
+## Table of Contents
+- [Problem Descriptions](#problem-descriptions)
+  - [Threat Modelling](#threat-modelling)
+  - [Certificate Authority and PKI (RC)](#certificate-authority-and-pki-rc)
+  - [File Integrity (RC)](#file-integrity-rc)
+  - [Execution Instructions](#execution-instructions)
 
-#############################################################################################################
-How to run the code:
-#############################################################################################################
-How to run server.py, client.py, mitm.py:
+## Problem Descriptions
+
+### Threat Modelling
+
+Addressed in three files:
+- `Assumptions.pdf`: Contains answers for Threat Modelling - Question 1.
+- `Attack_tree.pdf`: Contains answers for Threat Modelling - Question 2.
+- `Risk_assessment.pdf`: Contains answers for Threat Modelling - Question 3.
+
+### Certificate Authority and PKI (RC)
+
+Detailed in two parts:
+- **PKI Infrastructure**:
+  - Found within the `rootCA` folder.
+  - Includes CA's Public-Key Certificate (`ca.crt`) and Server's Public-Key Certificate (`server.crt`).
+- **Man in the Middle**:
+  - Scripts: `client.py` and `server.py` (for building TLS connections), `mitm.py` (for executing the MITM attack).
+  - `Evidence_for_mitm` folder contains visuals and data relevant to the MITM attack.
+
+### File Integrity (RC)
+
+- `Signed_Files/q3.py`: Contains script related to File Integrity - Question 1.
+- `File_integrity_report.pdf`: Contains answers for File Integrity - Question 2.
+
+## MITM Execution Instructions
+
+### Running TLS Connection and MITM Scripts
+
 1. Ensure server.py in the machine B, client.py in the machine A, mitm.py in the machine M
-2. In the machine B, run server.py: python3 /path/to/server.py [server_port] [server.crt] [server.key]
-You should see: Waiting for client...
-3. In the machine A, run client.py: python3 /path/to/client.py www.technowizard.com [server_port] [client.crt]
-Note: You need to modify the "www.technowizard.com" to server IP address as there's no ip address in server certificate
-instructions:1: On machine A, terminal: nano /etc/hosts
-             2: Add the server IP address and the domain name at the last line. (www.technowizard.com)
-             3: Save and exit
+2. In the machine B, run server.py:
+   
+```bash
+python3 /path/to/server.py [server_port] [server.crt] [server.key]
+```
 
-You should see: "Enter message: "
+You should see: 
 
-4. In the machine M, run mitm.py: python3 /path/to/mitm.py [victim_ip] [server_ip] [interface]
-You should able to see the successful message as shown in the evidence.
-If you want to quit, press "Ctrl + C" in the machine M, you should see the message: "KeyboardInterrupt"
-And the data file will be saved in the same folder as mitm.py, called "arper.pcap". You can open it in wireshark.
+```bash
+Waiting for client...
+```
 
-#############################################################################################################
-How to run Signed_Files/q3.py:
+4. In the machine A, run client.py:
+
+```bash
+python3 /path/to/client.py www.technowizard.com [server_port] [client.crt]
+```
+
+(Note: You need to modify the "www.technowizard.com" to server IP address as there's no ip address in server certificate)
+   -  On machine A, terminal: nano /etc/hosts
+   -  Add the server IP address and the domain name at the last line. (www.technowizard.com)
+   -  Save and exit
+
+You should see:
+
+```bash
+"Enter message: "
+```
+5. In the machine M, run mitm.py: python3 /path/to/mitm.py [victim_ip] [server_ip] [interface]
+You should able to see the successful message as shown in the evidence. If you want to quit, press "Ctrl + C" in the machine M, you should see the message: "KeyboardInterrupt" And the data file will be saved in the same folder as mitm.py, called "arper.pcap". You can open it in wireshark.
+
+### Running Signed_Files/q3.py
 1. Ensure q3.py, message.txt, messageTwo.txt, public.key, signature.pem in the same folder:
-2. Run q3.py: python3 q3.py
+2. Run q3.py:
+   
+```bash
+python3 q3.py
+```
 You should see the result message.
-#############################################################################################################
-
+   
